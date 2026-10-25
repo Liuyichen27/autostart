@@ -7,7 +7,7 @@ import json
 import sys
 from pathlib import Path
 
-from . import __version__, core
+from . import __version__, _update, core
 
 
 def _backend():

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "autostart"
-version = "1.0.0"
+version = "1.1.0"
 description = "查看和禁用 Windows 开机启动项，改前自动备份"
 readme = "README.md"
 requires-python = ">=3.8"

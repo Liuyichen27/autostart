@@ -1,0 +1,38 @@
+==================================================
+ autostart · 使用说明
+==================================================
+
+【这是什么】
+autostart —— 看清开机时到底有什么在偷偷启动。
+三个真实来源（HKCU Run、HKLM Run、启动文件夹）全摊开，改之前自动备份。
+
+【怎么装】
+需要 Python 3.8 或更高版本。把压缩包解压，在解压出来的文件夹里执行：
+
+    python -m pip install .
+
+装好后任何目录下都能用 `autostart` 命令。
+不想装也能直接跑：python -m autostart.cli …（在解压目录里）
+
+【怎么用】
+    autostart list
+    autostart list --user-only --json
+    autostart disable "迅雷"            # 先预览，不动手
+    autostart disable "迅雷" --yes      # 真的禁用
+    autostart restore                   # 从最新备份还原
+
+【常用参数】
+    list       --json / --user-only
+    backup     -o 备份文件路径（默认自动命名）
+    disable    名称支持子串匹配；--yes 才真的执行；--all-users 才动 HKLM（需管理员）
+    restore    从备份恢复，默认用最新一份
+
+【它的边界】
+只支持 Windows；没有 --yes 就只打印将要做什么；改 HKLM 需要管理员权限。
+
+【怎么确认是新版】
+每次运行会在后台看一眼 GitHub，有新版本会打一行提示（查不到就安静跳过）。
+不想让它查，设环境变量 AUTOSTART_NO_UPDATE=1 即可关闭。
+
+项目主页：https://github.com/Liuyichen27/autostart
+只有源码包没有安装包，装不动就提 issue。
