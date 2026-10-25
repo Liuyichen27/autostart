@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autostart"
+version = "1.0.0"
+description = "查看和禁用 Windows 开机启动项，改前自动备份"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Liuyichen27" }]
+keywords = ["windows", "autostart", "startup", "registry", "cli"]
+classifiers = [
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Systems Administration",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Liuyichen27/autostart"
+
+[project.scripts]
+autostart = "autostart.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
